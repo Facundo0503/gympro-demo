@@ -5,13 +5,23 @@ import { AlertsPanel } from "@/components/dashboard/alerts-panel";
 import { StatusPieChart } from "@/components/dashboard/status-pie-chart";
 import { RecentActivity } from "@/components/dashboard/recent-activity";
 
+const EMPTY_KPIS = {
+  totalMembers: 0, activeMembers: 0, proximoVencerMembers: 0,
+  overdueMembers: 0, inactiveMembers: 0, monthlyRevenue: 0,
+  projectedRevenue: 0, activePercentage: 0, overduePercentage: 0,
+  muayThaiMonthlyRevenue: 0,
+};
+
 export default async function DashboardPage() {
   let data;
   try {
     data = await getDashboardData();
   } catch (err) {
+    // Re-throw redirects (NEXT_REDIRECT) — Next.js must handle them
+    const isRedirect = err instanceof Error && (err as { digest?: string }).digest?.startsWith("NEXT_REDIRECT");
+    if (isRedirect) throw err;
     console.error("[dashboard] getDashboardData error:", err);
-    throw err;
+    data = { kpis: EMPTY_KPIS, alerts: [], recentPayments: [] };
   }
 
   return (
