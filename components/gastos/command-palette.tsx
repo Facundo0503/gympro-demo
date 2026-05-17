@@ -177,7 +177,7 @@ export function CommandPalette({
                 cerrar
               </span>
             </div>
-            <span className="text-[11px] text-zinc-600">MK Gym · Command Palette</span>
+            <span className="text-[11px] text-zinc-600">GymPro Demo · Command Palette</span>
           </div>
         </Command>
       </DialogContent>

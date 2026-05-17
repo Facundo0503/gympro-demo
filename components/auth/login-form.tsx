@@ -50,7 +50,7 @@ export function LoginForm() {
               id="email"
               name="email"
               type="email"
-              placeholder="admin@mkgym.com"
+              placeholder="demo@gymproapp.com"
               required
               autoComplete="email"
               disabled={isPending}

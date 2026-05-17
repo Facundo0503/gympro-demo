@@ -28,12 +28,12 @@ export function WhatsappButtons({ member, showBoth = false }: WhatsappButtonsPro
   const phone = member.whatsapp.replace(/\D/g, "");
 
   const reminderMessage =
-    `Hola ${member.first_name}! Te recordamos que tu cuota de MK Gym esta proxima a vencer. ` +
+    `Hola ${member.first_name}! Te recordamos que tu cuota de GymPro esta proxima a vencer. ` +
     `Renovala antes del vencimiento para seguir disfrutando del gimnasio sin interrupciones. ` +
-    `Gracias por ser parte de MK Gym!`;
+    `Gracias por ser parte de GymPro!`;
 
   const overdueMessage =
-    `Hola ${member.first_name}! Te informamos que tu cuota de MK Gym se encuentra vencida. ` +
+    `Hola ${member.first_name}! Te informamos que tu cuota de GymPro se encuentra vencida. ` +
     `Para mantener el acceso activo al gimnasio, es necesario regularizar el pago a la brevedad. Gracias!`;
 
   function handleSend(type: "reminder" | "overdue", message: string) {

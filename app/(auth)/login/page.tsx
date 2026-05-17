@@ -19,7 +19,7 @@ export default async function LoginPage() {
       <div className="mb-8 flex flex-col items-center gap-3">
         <Image
           src="/logo.jpg"
-          alt="MK Gym"
+          alt="GymPro Demo"
           width={100}
           height={100}
           className="rounded-full object-cover"
@@ -27,7 +27,7 @@ export default async function LoginPage() {
         />
         <div className="text-center">
           <h1 className="text-2xl font-bold tracking-tight text-white">
-            MK Gym
+            GymPro Demo
           </h1>
           <p className="text-sm text-zinc-400">Panel de administración</p>
         </div>

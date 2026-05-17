@@ -3,8 +3,8 @@ import { Toaster } from "sonner";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "MK Gym Manager",
-  description: "Panel de gestión de cuotas y clientes — MK Gym",
+  title: "GymPro Demo",
+  description: "Panel de gestión de cuotas y clientes — GymPro Demo",
 };
 
 export default function RootLayout({

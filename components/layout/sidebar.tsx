@@ -37,13 +37,13 @@ export function Sidebar() {
       <div className="flex flex-col items-center gap-2 border-b border-zinc-800 px-4 py-6">
         <Image
           src="/logo.jpg"
-          alt="MK Gym"
+          alt="GymPro Demo"
           width={64}
           height={64}
           className="rounded-full object-cover ring-2 ring-yellow-500/40"
           priority
         />
-        <span className="text-base font-bold text-yellow-500 tracking-wide">MK Gym</span>
+        <span className="text-base font-bold text-yellow-500 tracking-wide">GymPro Demo</span>
       </div>
 
       <nav className="flex-1 space-y-1 px-2 py-4">
