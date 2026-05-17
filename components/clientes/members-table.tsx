@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Search, Trash2, Pencil, Eye } from "lucide-react";
 import { toast } from "sonner";
@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/dialog";
 import { StatusBadge } from "@/components/clientes/status-badge";
 import { ActivityBadges } from "@/components/clientes/activity-badges";
-import { deleteMember } from "@/app/dashboard/clientes/actions";
 import type { Member, MemberStatus } from "@/lib/types";
 
 interface MembersTableProps {
@@ -40,7 +39,6 @@ export function MembersTable({ members }: MembersTableProps) {
   const [statusFilter, setStatusFilter] = useState<MemberStatus | "all">("all");
   const [activityFilter, setActivityFilter] = useState<"all" | "gimnasio" | "muay_thai" | "zumba" | "funcional">("all");
   const [deleteId, setDeleteId] = useState<string | null>(null);
-  const [isPending, startTransition] = useTransition();
 
   const filtered = members.filter((m) => {
     const q = search.toLowerCase();
@@ -54,16 +52,8 @@ export function MembersTable({ members }: MembersTableProps) {
   });
 
   function handleDelete() {
-    if (!deleteId) return;
-    startTransition(async () => {
-      const result = await deleteMember(deleteId);
-      if (result?.error) {
-        toast.error(result.error);
-      } else {
-        toast.success("Cliente eliminado.");
-      }
-      setDeleteId(null);
-    });
+    toast.info("Modo Demo: la eliminación está deshabilitada para preservar los datos de ejemplo.");
+    setDeleteId(null);
   }
 
   const memberToDelete = members.find((m) => m.id === deleteId);
@@ -263,14 +253,12 @@ export function MembersTable({ members }: MembersTableProps) {
             <Button
               variant="ghost"
               onClick={() => setDeleteId(null)}
-              disabled={isPending}
               className="text-zinc-400 hover:text-white"
             >
               Cancelar
             </Button>
             <Button
               onClick={handleDelete}
-              disabled={isPending}
               className="bg-red-600 text-white hover:bg-red-500"
             >
               Eliminar
