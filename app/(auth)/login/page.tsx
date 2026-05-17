@@ -20,11 +20,12 @@ export default async function LoginPage() {
     <main className="flex min-h-screen flex-col items-center justify-center bg-zinc-950 px-4">
       <div className="mb-8 flex flex-col items-center gap-3">
         <Image
-          src="/logo.jpg"
+          src="/logo.svg"
           alt="GymPro Demo"
           width={100}
           height={100}
           className="rounded-full object-cover"
+          unoptimized
           priority
         />
         <div className="text-center">
